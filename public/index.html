@@ -7,31 +7,58 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>小马糕口令实时分享</h1>
-    <p class="hint">规则：口令中识别到的三位数字必须都 ≥ 800，否则不能上传。</p>
+  <div class="bg-decor bg-1"></div>
+  <div class="bg-decor bg-2"></div>
 
-    <section class="card">
-      <div class="row">
-        <input id="nickname" placeholder="昵称（可选）" maxlength="30" />
+  <main class="container">
+    <header class="site-header card">
+      <div class="title-wrap">
+        <h1>小马糕口令实时分享</h1>
+        <p class="subtitle">实时发布 · 实时同步 · 一键复制</p>
       </div>
-      <div class="row">
+
+      <div class="author-badge" title="网页作者">
+        <span class="author-label">网页作者</span>
+        <span class="author-id">王者ID：浪涛不懂法</span>
+      </div>
+    </header>
+
+    <section class="notice card">
+      <span class="notice-dot"></span>
+      规则：口令中识别到的三位阿拉伯数字必须都 ≥ 800，否则不能上传。
+    </section>
+
+    <section class="card form-card">
+      <div class="field">
+        <label for="nickname">昵称（可选）</label>
+        <input id="nickname" placeholder="例如：峡谷老六" maxlength="30" />
+      </div>
+
+      <div class="field">
+        <label for="token">小马糕口令</label>
         <textarea id="token" placeholder="粘贴你的小马糕口令..." maxlength="500"></textarea>
       </div>
-      <div class="row actions">
-        <button id="submitBtn">发布</button>
-        <button id="refreshBtn" class="secondary">刷新</button>
+
+      <div class="actions">
+        <button id="submitBtn" class="btn btn-primary">发布</button>
+        <button id="refreshBtn" class="btn btn-secondary">刷新</button>
       </div>
+
       <p id="msg" class="msg"></p>
     </section>
 
-    <section class="list-wrap">
+    <section class="card list-card">
       <div class="list-header">
         <h2>实时分享贴</h2>
-        <span id="count"></span>
+        <span id="count" class="count-pill"></span>
       </div>
       <div id="postList" class="post-list"></div>
     </section>
+
+    <footer class="site-footer">
+      <span>© 小马糕口令实时分享站</span>
+      <span>作者：游戏ID @浪涛不懂法</span>
+    </footer>
   </main>
 
   <script src="/socket.io/socket.io.js"></script>
