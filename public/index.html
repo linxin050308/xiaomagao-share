@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小马糕口令实时分享</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>小马糕口令实时分享</h1>
+    <p class="hint">规则：口令中识别到的三位数字必须都 ≥ 800，否则不能上传。</p>
+
+    <section class="card">
+      <div class="row">
+        <input id="nickname" placeholder="昵称（可选）" maxlength="30" />
+      </div>
+      <div class="row">
+        <textarea id="token" placeholder="粘贴你的小马糕口令..." maxlength="500"></textarea>
+      </div>
+      <div class="row actions">
+        <button id="submitBtn">发布</button>
+        <button id="refreshBtn" class="secondary">刷新</button>
+      </div>
+      <p id="msg" class="msg"></p>
+    </section>
+
+    <section class="list-wrap">
+      <div class="list-header">
+        <h2>实时分享贴</h2>
+        <span id="count"></span>
+      </div>
+      <div id="postList" class="post-list"></div>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
